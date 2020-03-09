@@ -1,14 +1,23 @@
-/*
+import java.util.Scanner;
 
-Write a program that prompts the user for two integers and then prints
-The sum
-The difference
-The product
-The average
-The distance (absolute value of the difference)
-The maximum (the larger of the two)
-The minimum (the smaller of the two)
 
-Hint: The max and min functions are declared in the Math class.
-
-*/
+public class Main
+{
+   public static void main(String[] args) 
+   {
+       Scanner sc = new Scanner(System.in);
+      
+       int num1, num2;
+       System.out.print("Enter first number: ");
+       num1 = sc.nextInt();
+       System.out.print("Enter second number: ");
+       num2 = sc.nextInt();
+      
+       System.out.println("Sum = "+(num1+num2));
+       System.out.println("Difference = "+(num1-num2));
+       System.out.println("Product = "+(num1*num2));
+       System.out.println("Absolute value = "+Math.abs(num1-num2));
+       System.out.println("Maximum = "+Math.max(num1, num2));
+       System.out.println("Minimum = "+Math.min(num1, num2));
+   }
+}
