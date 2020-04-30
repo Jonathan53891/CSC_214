@@ -1,0 +1,45 @@
+;eliF.oi.avaj tropmi
+;noitpecxEdnuoFtoNeliF.oi.avaj tropmi
+;rennacS.litu.avaj tropmi
+
+ niaM ssalc cilbup
+{
+ noitpecxEdnuoFtoNeliF sworht )sgra ][gnirtS(niam diov citats cilbup  
+{  
+;eman_elif gnirtS    
+ )1 == htgnel.sgra( fi    
+{    
+;]0[sgra = eman_elif      
+ }    
+ esle    
+{    
+;)" :eman eliF"(tnirp.tuo.metsyS      
+;)ni.metsyS(rennacS wen = cs rennacS      
+;)(txen.cs = eman_elif      
+;)(esolc.cs      
+}    
+;llun=rf rennacS    
+    
+yrt    
+{    
+;))eman_elif(eliF wen(rennacS wen = rf      
+}    
+)e noitpecxEdnuoFtoNeliF(hctac    
+{    
+;)"n\margorp eht nurer dna kcehc esaelP .dnuoF toN eliF yrroS"(nltnirp.tuo.metsyS      
+;)0(tixe.metsyS      
+}    
+ ))(eniLtxeNsah.rf( elihw    
+{    
+;)(eniLtxen.rf = enil gnirtS      
+;)enil(esrever = enil      
+;)enil(nltnirp.tuo.metsyS      
+}    
+;)(esolc.rf    
+}  
+
+ )enil gnirtS(esrever gnirtS citats cilbup  
+{  
+;)(gnirtSot.)(esrever.)enil(redliuBgnirtS wen nruter    
+}  
+}
