@@ -1,0 +1,11 @@
+Implement a class Bag that stores items represented as strings. Items can be 
+repeated. 
+
+Supply methods for adding an item, and for counting how many times an item 
+has been added: 
+
+public void add(String itemName) 
+public int count(String itemName) 
+
+Your Bag class should store the data in an ArrayList, where Item is an inner 
+class with two instance variables: the name of the item and the quantity. 
