@@ -14,34 +14,53 @@ then the program produces the output file
    //# 3 # And everywhere that Mary went, 
    //# 4 # The lamb was sure to go! 
    
-   The line numbers are enclosed in //# # delimiters so that the program can be used for numbering Java source files. Prompt the user for the input and output file names.
+   The line numbers are enclosed in //# # delimiters so that the program can be used 
+   for numbering Java source files. Prompt the user for the input and output file 
+   names.
 
 */
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.Scanner;
-import java.io.FileReader;
-import java.io.FileNotFoundException;
 
 public class Main
 {
-  public static void main(String[] args) throws FileNotFoundException
-  {
-    int ln = 1;
-    Scanner input = new Scanner(System.in); // taking input from the keyboard
-    System.out.print("i/p file: ");
-    String inputFileName = input.next();
-    System.out.print("o/p file: ");
-    String outputFileName = input.next();
-    FileReader rd = new FileReader("inputfile.txt"); // reading input file
-    Scanner inf = new Scanner(rd);
-    PrintWriter outf = new PrintWriter("outputfile.txt");//writing out put file using printWriter
-    while (inf.hasNextLine()) // iterating at the end of the last line from the first line
-    {
-      String a = inf.nextLine();
-      outf.println("/* " + ln + " */ " + a); //keeping line numbers before every line
-      ln++; // incrementing the line number for each and every line
-    }
-    outf.close(); // closing the output file
-  }
+	public static void main(String[] args) throws FileNotFoundException
+	{
+		// Construct a scanner to scan for input values in the console
+		Scanner console = new Scanner(System.in);
+		
+		// Read in the names for the input file and output file
+		String inputFileName = "";
+		String outputFileName = "";
+		
+		System.out.print("Enter Input File Name: ");
+		inputFileName = inputFileName.concat(console.next());
+		
+		System.out.print("Enter Output File Name: ");
+		outputFileName = outputFileName.concat(console.next());
+		
+		// Close the console scanner
+		console.close();
+		
+		// Construct a PrintWriter, File, and Scanner object
+		PrintWriter out = new PrintWriter(outputFileName);
+		File inputFile = new File(inputFileName);
+		Scanner in = new Scanner(inputFile);
+		
+		// Write to the output file
+		int lineNum = 0;
+		while(in.hasNextLine())
+		{
+			String line = in.nextLine();
+			lineNum++;
+			
+			out.println("/* " + lineNum + "*/ " + line);
+		}
+		
+		in.close();
+		out.close();
+	}
 }
