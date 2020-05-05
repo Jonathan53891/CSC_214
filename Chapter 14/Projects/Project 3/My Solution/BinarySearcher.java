@@ -1,49 +1,33 @@
-**
- * A class for executing binary searches through an array.
- */
 public class BinarySearcher
 {
-    private Item[] v;
-
-    /**
-     * Constructs a BinarySearcher.
-     *
-     * @param anItem a sorted array of items
-     */
-    public BinarySearcher(Item[] anItem)
+  private Item[] v;
+  
+  public BinarySearcher(Item[] anItem)
+  {
+    v = anItem;
+  }
+  
+  public int binarySearch(int from, int to, String a)
+  {
+    if (from > to)
     {
-        v = anItem;
+      return -1;
     }
-
-    /**
-     * Finds a value in a sorted array, using the binary search algorithm.
-     * @param from the number to search from
-     * @param to the number to search to
-     * @param a the string to search
-     * @return the index at which the value occurs, or -1
-     * if it does not occur in the array
-     */
-    public int binarySearch(int from, int to, String a)
+    
+    int mid = (from + to) / 2;
+    int diff = v[mid].getKey().compareTo(a);
+    
+    if (diff == 0)
     {
-        if (from > to)
-        {
-            return -1;
-        }
-
-        int mid = (from + to) / 2;
-        int diff = v[mid].getKey().compareTo(a);
-
-        if (diff == 0)
-        {
-            return mid;
-        }
-        else if (diff < 0)
-        {
-            return binarySearch(mid + 1, to, a);
-        }
-        else
-        {
-            return binarySearch(from, mid - 1, a);
-        }
+      return mid;
     }
+    else if (diff < 0)
+    {
+      return binarySearch(mid + 1, to, a);
+    }
+    else
+    {
+      return binarySearch(from, mid - 1, a);
+    }
+  }
 }
