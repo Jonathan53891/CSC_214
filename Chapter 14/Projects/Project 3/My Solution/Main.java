@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Scanner;
 
 public class Main
 {
@@ -9,7 +10,7 @@ public class Main
   {
     String fileName = "input";
     
-    LookupTable names = new LookupTable(1050);
+    LookupTable names = new LookupTable(440);
     
     try
     {
@@ -21,35 +22,39 @@ public class Main
       System.out.println(e);
       System.exit(1);
     }
-    
-    LookupTable numbers = new LookupTable(1050);
+
+    LookupTable numbers = new LookupTable(440);
     numbers.reverse(names);
     
     boolean more = true;
     
-    while (more)
-    {
-      String cmd = JOptionPane.showInputDialog("Lookup N)ame, P)hone, Q)uit?");
-      
-      if (cmd == null)
+    String menu = "Lookup N)ame, P)hone, Q)uit?";
+    System.out.println(menu);
+    Scanner scan = new Scanner(System.in);
+    String choice = scan.nextLine();
+    do {
+      switch (choice)
       {
-        more = false;
+        case "N":
+          String name_request = "Enter name: ";
+          System.out.println(name_request);
+          String n = scan.nextLine();
+          System.out.println("Phone number: " + names.lookup(n)); 
+          break;
+        case "P":
+          String phone_request = "Enter phone number: ";
+          System.out.println(phone_request);
+          String p = scan.nextLine();
+          System.out.println("Name: " + numbers.lookup(p));
+          break;
+        case "Q":
+          System.exit(1);
+          break;
+        default:
+          break;
       }
-      else if (cmd.equalsIgnoreCase("Q"))
-      {
-        more = false;
-      }
-      else if (cmd.equalsIgnoreCase("N"))
-      {
-        String n = JOptionPane.showInputDialog("Enter name: ");
-        System.out.println("Phone number: " + names.lookup(n));
-      }
-      else if (cmd.equalsIgnoreCase("P"))
-      {
-        String n = JOptionPane.showInputDialog("Enter phone number: ");
-        System.out.println("Name: " + numbers.lookup(n));
-      }
+      return;
     }
-    System.exit(0);
+    while (choice != "Q");
   }
 }
