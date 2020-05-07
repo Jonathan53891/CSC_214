@@ -1,8 +1,10 @@
+import java.util.Arrays;
+
 public class MergeSorter
 {
   private Item[] a;
   
-  public MergeSorter(Item[] anItem)
+ public MergeSorter(Item[] anItem)
   {
     a = anItem;
   }
@@ -22,10 +24,10 @@ public class MergeSorter
 
     MergeSorter firstSorter = new MergeSorter(first);
     MergeSorter secondSorter = new MergeSorter(second);
-
+    
     firstSorter.sort();
     secondSorter.sort();
-
+    
     merge(first, second);
   }
   
@@ -37,6 +39,7 @@ public class MergeSorter
     
     while (iFirst < first.length && iSecond < second.length)
     {
+      
       if (first[iFirst].getKey().compareTo(second[iSecond].getKey()) < 0)
       {
         a[j] = first[iFirst];
